@@ -4,11 +4,11 @@
 
 # Site
 title: BillyBoyBallin
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
+subtitle: Personal Blog to Showcase Projects
+description: AWS, Cloud Services, Machine Learning, Data Science
+keywords: programming, aws, cloud services, machine learning, data science
+author: Ahmad Bilal
+language: en
 timezone:
 
 # URL
