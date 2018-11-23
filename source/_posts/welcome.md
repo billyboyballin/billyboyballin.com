@@ -1,5 +1,6 @@
 ---
 title: Welcome
+date: 2018-11-22 12:55:29
 cover_index: /assets/rocket.jpg
 cover_detail: /assets/miami-1.jpg
 tags:
