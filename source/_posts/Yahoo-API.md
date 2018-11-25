@@ -1,5 +1,6 @@
 ---
 title: Utilizing Yahoo's Fantasy Sports API To Import Data for Fantasy Football League
+date: 2018-11-23 22:30:47
 cover_index: /assets/vince.jpg
 cover_detail: /assets/miami-1.jpg
 tags:
