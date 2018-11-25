@@ -5,11 +5,15 @@ cover_detail: /assets/miami-1.jpg
 tags:
 ---
 
-My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, our league lacked a proper record-keeping system to keep track of all statistics. In order to go back and retrieve all the data, one would have to go and manually copy and paste everything, a time-consuming task. In this post, I will illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request, receive response object, parse the XML response object to extract the data and then finally store the data into an excel workbook. 
+My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, it lacks a proper record-keeping system to keep track of all statistics. To go back and retrieve the data, one would have to manually copy and paste everything, a time-consuming task. In this post, I will illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request for league data, receive response object, parse the XML response object and finally write the data to a csv file. 
 
-## 1. Connecting to Yahoo's Fantasy Sports API
 
-To start we first have to sign up at [Yahoo's Developer Network](https://developer.yahoo.com/apps/create) to receive a consumer key and consumer secret. Once you have the consumer key and consumer secret open up a text editor and type in the following:  
+{% img /assets/oldnfl1.jpg 500 500 %}|{% img /assets/oldnfl2.jpg 500 500 %}
+---|---
+
+## Connecting to Yahoo's Fantasy Sports API
+
+To begin we first have to sign up at [Yahoo's Developer Network](https://developer.yahoo.com/apps/create) to receive a consumer key and consumer secret. Once you have the consumer key and consumer secret open up a text editor and type in the following:  
 
 {% codeblock %}
 {
@@ -17,9 +21,9 @@ To start we first have to sign up at [Yahoo's Developer Network](https://develop
     "consumer_secret": "paste_my_consumer_secret_here"
 }
 {% endcodeblock %}
-After pasting the consumer key and consumer secret, save the file as oauth2.json and place it in the working directory of your project.  
+After pasting the consumer key and consumer secret, save the file as oauth2.json and place it in the working directory. 
 
-The [yahoo_oauth](https://pypi.org/project/yahoo_oauth/) is a great python library package that supports OAuth authentication mechanism needs to access many of Yahoo services. Once the yahoo_oauth package is downloaded via pip we can start the process of connecting to Yahoo's Fantasy Sports API.  
+[Yahoo_oauth](https://pypi.org/project/yahoo_oauth/) is a great python library package that supports OAuth authentication mechanism necessary to access many of Yahoo services. Once the yahoo_oauth package is downloaded via pip we can start the process of connecting to Yahoo's Fantasy Sports API.  
 
 {% codeblock %}
 from yahoo_oauth import OAuth2
@@ -28,13 +32,14 @@ if not oauth.token_is_valid():
     oauth.refresh_access_token()
 {% endcodeblock %}
 
-With that we're connected and have established an OAuth2 authentication necessary to send requests.
+With that we're connected and have established an oauth2 authentication necessary to send requests.
 
-## 2. Sending Request and Receiving Response Object  
+{% img /assets/hard1.jpg 500 500 %}|{% img /assets/hard2.jpg 500 500 %}
+---|---
 
-This [lengthy documentation](https://developer.yahoo.com/fantasysports/guide/) explains the parameters that needs to be provided when sending a request. Essentially the building blocks of the API are Collections and Resources. Resources are typically a reference to single entity such as a league, a team or a player. A Collection is simply a wrapper that contain multiple similar resources. A Resource is referred to by a **_Single Key_**, while collection will be referred to by **_Multiple Keys_**.  
+## Sending Request and Receiving Response Object  
 
-After researching further and going through the documentation I was able to determine the league keys for our league for every year since 2002 summarized in the following table.
+This [lengthy documentation](https://developer.yahoo.com/fantasysports/guide/) explains the parameters that needs to be provided when sending a request. Essentially the building blocks of the API are Collections and Resources. Resources are typically a reference to single entity such as a league, a team or a player. A Collection is simply a wrapper that contain multiple similar resources. A Resource is referred to by a **_Single Key_**, while collection will be referred to by **_Multiple Keys_**. Using multiple keys I can retrieve data for multiple leagues at once. After researching further and going through the documentation I was able to determine the league keys for our league for every year since 2002. They're summarized below.
 
 Year||League_Key  
 ---||---
@@ -65,11 +70,14 @@ r = oauth.session.get(url)
 r.status_code
 {% endcodeblock %}
 
-A status code of 2000 will indicate Success - The action was successfully received, understood, and accepted. 
+A status code of 200 will indicate Success - The action was successfully received, understood, and accepted. 
 
-## 3. Parsing the XML response object.
+{% img /assets/dolphin.jpg 500 500 %}|{% img /assets/dolphin1.jpg 500 500 %}
+---|---
 
-After a success status code of 2000 we receive a XML response object termed r. To parse and modify the XML response object, I use ElementTree and re. Finally to save into a excel worksheet I'll use the csv package. 
+## Parsing the XML response object and writing it to csv file
+
+After a successful status code of 200 we receive a XML response object. To parse and modify the XML response object, I use ElementTree and re. Finally to save into an excel file, I'll use the csv package. 
 
 {% codeblock lang:python line_number:false %}
 # Import packages
@@ -119,6 +127,8 @@ for team in root.findall('./leagues/league/standings/teams/team'):
     list.append(thisdict)
 {% endcodeblock %}
 
+Initially the XML had a namespace that effected the naming of elements and attributes. To make life easier, it was removed. A for loop was then written that extracted all the specified information. We stored this information in a dictionary that was subsequently added it to a list. The list is then written into a csv file.
+
 {% codeblock lang:python line_number:false %}
 # Generate headers for excel file.
 fields = ['season', 'name', 'team_name', 'team_key', 'rank', 'playoff_seed', 'wins', 'losses', 'ties', 'points_for', 'points_against', 'number_of_moves', 'number_of_trades']
@@ -129,5 +139,8 @@ with open('project.csv', 'w') as csvfile:
     writer.writeheader()
     writer.writerows(list) 
 
-
 {% endcodeblock %}
+
+By utilizing this method we were able to collect 16 years worth of league metadata which included the year league was played, owner name, team name, team key, rank, playoff seed, total wins, total losses, total ties, total points scored, total points against, number of moves and number of trades.
+
+{% img /assets/celebrate1.jpg 500 500 %}
