@@ -15,3 +15,12 @@ Thank you for visiting my blog. This site was created to document my odyssey tow
 I grew up in the sunshine state, raised in the projects of Hollywood. My blood is Punjabi; I'm a descendant of the [Dogar Tribe](https://en.wikipedia.org/wiki/Dogar). I attended Florida State University and earned my Bachelors in Chemical Science. I earned a Masters in Biomedical Science from Barry University. Initially, I had aspirations to become a physician. But shit happened, and I realized my future wasn’t intended for medicine. So I switched fields. In January 2018, I started learning programming and taught myself python. I then moved on to learning and working with cloud-based technology. I am a strong believer in stoic principles. Despite setbacks, my life purpose is still the same, to help society and improve the lives of others. Hopefully by learning and increasing my knowledge in computer science, I can be more effective in this pursuit.
 
 ----------------
+
+## Fill out the contact form below to get in touch with me
+  <form method="POST" action="https://formspree.io/ahmadbilal16@gmail.com">
+    <input type="text" name="email" placeholder="Email Address">
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea rows="5" cols="40" name="message" placeholder="Your message here..."></textarea>
+	<input type="hidden" name="_next" value="https://billyboyballin.com/contact" />
+    <button type="submit">Send</button>
+  </form>
