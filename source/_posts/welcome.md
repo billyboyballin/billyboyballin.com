@@ -16,11 +16,13 @@ I'm from the sunshine state. I grew up in the projects of Hollywood, Florida. I'
 
 ----------------
 
-## Fill out the contact form below to get in touch with me
+## **Fill out the contact form below to get in touch with me**
   <form method="POST" action="https://formspree.io/ahmadbilal16@gmail.com">
-    <input type="text" name="email" placeholder="Email Address">
-    <input type="text" name="subject" placeholder="Subject">
-    <textarea rows="5" cols="40" name="message" placeholder="Your message here..."></textarea>
+    <input type="text" name="fullname" placeholder="Name" style="width:25%;">
+    <input type="text" name="email" placeholder="Email Address" style="width:25%;">
+	Leave a message below
+    <textarea rows="5" name="message" placeholder="Your message here..." style="width:100%;"></textarea>
 	<input type="hidden" name="_next" value="https://billyboyballin.com/contact/index.html" />
     <button type="submit">Send</button>
   </form>
+  
