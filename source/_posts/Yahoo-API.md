@@ -9,8 +9,7 @@ tags:
 My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, it lacks a proper record-keeping system to keep track of all statistics. To go back and retrieve the data, one would have to manually copy and paste everything, a time-consuming task. In this post, I will illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request for league data, receive response object, parse the XML response object and finally write the data to a csv file. 
 
 
-{% img /assets/oldnfl1.jpg 500 500 %}|{% img /assets/oldnfl2.jpg 500 500 %}
----|---
+{% img /assets/oldnfl1.jpg 500 500 %}
 
 ## Connecting to Yahoo's Fantasy Sports API
 
@@ -18,8 +17,8 @@ To begin we first have to sign up at [Yahoo's Developer Network](https://develop
 
 {% codeblock %}
 {
-    "consumer_key": "paste_consumer_key_here",
-    "consumer_secret": "paste_my_consumer_secret_here"
+​    "consumer_key": "paste_consumer_key_here",
+​    "consumer_secret": "paste_my_consumer_secret_here"
 }
 {% endcodeblock %}
 After pasting the consumer key and consumer secret, save the file as oauth2.json and place it in the working directory. 
@@ -30,13 +29,12 @@ After pasting the consumer key and consumer secret, save the file as oauth2.json
 from yahoo_oauth import OAuth2
 oauth = OAuth2(None, None, from_file='oauth2.json')
 if not oauth.token_is_valid():
-    oauth.refresh_access_token()
+​    oauth.refresh_access_token()
 {% endcodeblock %}
 
 With that we're connected and have established an oauth2 authentication necessary to send requests.
 
-{% img /assets/hard1.jpg 500 500 %}|{% img /assets/hard2.jpg 500 500 %}
----|---
+{% img /assets/hard1.jpg 500 500 %}
 
 ## Sending Request and Receiving Response Object  
 
@@ -63,18 +61,17 @@ Year||League_Key
 
 {% codeblock lang:python line_number:false %}
 url = "https://fantasysports.yahooapis.com/fantasy/v2/leagues;league_keys=
-	79.l.360438, 101.l.382268, 124.l.356850, 153.l.320455, 
-	175.l.183620, 199.l.509137, 222.l.301553, 242.l.731963, 
-	257.l.748015, 273.l.656472, 314.l.854907, 331.l.232198, 
-	348.l.865995, 359.l.678605, 371.l.193352/standings"
+​	79.l.360438, 101.l.382268, 124.l.356850, 153.l.320455, 
+​	175.l.183620, 199.l.509137, 222.l.301553, 242.l.731963, 
+​	257.l.748015, 273.l.656472, 314.l.854907, 331.l.232198, 
+​	348.l.865995, 359.l.678605, 371.l.193352/standings"
 r = oauth.session.get(url)
 r.status_code
 {% endcodeblock %}
 
 A status code of 200 will indicate Success - The action was successfully received, understood, and accepted. 
 
-{% img /assets/dolphin.jpg 500 500 %}|{% img /assets/dolphin1.jpg 500 500 %}
----|---
+{% img /assets/dolphin.jpg 500 500 %}
 
 ## Parsing the XML response object and writing it to csv file
 
@@ -96,15 +93,15 @@ list = []
 
 # For loop statement that will loop through appropriate elemental tags and return associated text content. Save that text content into dictionary and add dictionary to list.
 for team in root.findall('./leagues/league/standings/teams/team'):
-    team_key = team.find('team_key')
-    team_key = team_key.text
-    name = team.find('name')
-    name = name.text
-    number_of_moves = team.find('number_of_moves')
-    number_of_moves = number_of_moves.text
-    number_of_trades = team.find('number_of_trades')
-    number_of_trades = number_of_trades.text
-    
+​    team_key = team.find('team_key')
+​    team_key = team_key.text
+​    name = team.find('name')
+​    name = name.text
+​    number_of_moves = team.find('number_of_moves')
+​    number_of_moves = number_of_moves.text
+​    number_of_trades = team.find('number_of_trades')
+​    number_of_trades = number_of_trades.text
+​    
     for nickname in team.iter('nickname'):
         nickname = nickname.text
     for season in team.iter('season'):
@@ -136,9 +133,9 @@ fields = ['season', 'name', 'team_name', 'team_key', 'rank', 'playoff_seed', 'wi
 
 # Write contents of list into 'project.csv' saved in working directory. 
 with open('project.csv', 'w') as csvfile:
-    writer = csv.DictWriter(csvfile, fieldnames = fields)
-    writer.writeheader()
-    writer.writerows(list) 
+​    writer = csv.DictWriter(csvfile, fieldnames = fields)
+​    writer.writeheader()
+​    writer.writerows(list) 
 
 {% endcodeblock %}
 
