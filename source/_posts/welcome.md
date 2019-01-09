@@ -1,6 +1,6 @@
 ---
 title: Welcome
-date: 2018-11-28 08:53:18
+date: 2019-01-09 08:53:18
 cover_index: /assets/rocket.jpg
 cover_detail: /assets/miami-1.jpg
 tags:
@@ -12,7 +12,7 @@ Thank you for visiting my blog. This site was created to document my odyssey tow
 ## About Me
 
 {% pullquote left %}"You have to assemble your life yourself action by action, and be satisfied if each one achieves its goal, as far as it can...But there will be some external obstacles!...if you accept the obstacle and work with what you're given, an alternative will present itself." Marcus Aurelius, Meditations{% endpullquote %}
-I'm from the sunshine state. I grew up in the projects of Hollywood, Florida. I'm a descendant of the [Dogar Tribe](https://en.wikipedia.org/wiki/Dogar). I attended Florida State University and earned my Bachelors in Chemical Science. I earned a Masters in Biomedical Science from Barry University. Initially, I had aspirations to become a physician. But due to circumstances I realized my future wasn’t intended for medicine. So I switched fields. In January 2018, I started learning programming and taught myself python. I then moved on to learning and working with AWS. I am a strong believer in stoic principles. Despite setbacks, my life purpose is still the same, to help society and improve the lives of others. Hopefully by learning and increasing my knowledge in computer science, I can be more effective in this pursuit.
+I'm from the sunshine state. I grew up in the projects of Hollywood, Florida. I attended Florida State University and earned my Bachelors in Chemical Science. I earned a Masters in Biomedical Science from Barry University. Initially, I had aspirations to become a physician. But due to circumstances I realized my future wasn’t intended for medicine. So I switched fields. In January 2018, I started learning programming and taught myself python. I then moved on to learning and working with AWS. I am a strong believer in stoic principles. Despite setbacks, my life purpose is still the same, to help society and improve the lives of others. Hopefully by learning and increasing my knowledge in computer science, I can be more effective in this pursuit.
 
 ----------------
 
