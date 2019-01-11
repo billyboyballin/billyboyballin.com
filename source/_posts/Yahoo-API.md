@@ -9,7 +9,7 @@ tags:
 My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, it lacks a proper record-keeping system to keep track of all statistics. To go back and retrieve the data, one would have to manually copy and paste everything, a time-consuming task. In this post, I will illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request for league data, receive response object, parse the XML response object and finally write the data to a csv file. 
 
 
-{% img /assets/oldnfl1.jpg 500 500 %}
+{% img /assets/oldnfl1.jpg %}
 
 ## Connecting to Yahoo's Fantasy Sports API
 
@@ -34,7 +34,7 @@ if not oauth.token_is_valid():
 
 With that we're connected and have established an oauth2 authentication necessary to send requests.
 
-{% img /assets/hard1.jpg 500 500 %}
+{% img /assets/hard1.jpg  %}
 
 ## Sending Request and Receiving Response Object  
 
@@ -71,7 +71,7 @@ r.status_code
 
 A status code of 200 will indicate Success - The action was successfully received, understood, and accepted. 
 
-{% img /assets/dolphin.jpg 500 500 %}
+{% img /assets/dolphin.jpg  %}
 
 ## Parsing the XML response object and writing it to csv file
 
@@ -141,4 +141,4 @@ with open('project.csv', 'w') as csvfile:
 
 By utilizing this method we were able to collect 16 years worth of league metadata which included the year league was played, owner name, team name, team key, rank, playoff seed, total wins, total losses, total ties, total points scored, total points against, number of moves and number of trades.
 
-{% img /assets/celebrate1.jpg 500 500 %}
+{% img /assets/celebrate1.jpg %}
