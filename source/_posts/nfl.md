@@ -6,7 +6,7 @@ cover_detail: /assets/miami-1.jpg
 tags:
 ---
 
-In this post I'm sharing some code that creates an interactive Bokeh plot with a scroll. As you scroll through an individual play you can see the position of the players on the field. Credit goes to [Rob Mulla](https://www.kaggle.com/robikscube) who wrote this and shared his kernel on Kaggle.
+In this post I'm sharing some code that creates an interactive Bokeh plot with a scroll. As you scroll through an individual play you can see the position of the players on the field. Credit goes to [Rob Mulla](https://www.kaggle.com/robikscube) who wrote this and shared his kernel on Kaggle. 
 
 {% img /assets/play.gif %}
 
