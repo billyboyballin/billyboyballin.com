@@ -15,7 +15,7 @@ My friends and I are part of a fantasy football league that was started in 2002.
 
 To begin we first have to sign up at [Yahoo's Developer Network](https://developer.yahoo.com/apps/create) to receive a consumer key and consumer secret. Once you have the consumer key and consumer secret open up a text editor and type in the following:  
 
-{% codeblock %}
+{% codeblock lang:python line_number:false %}
 {
 ​    "consumer_key": "paste_consumer_key_here",
 ​    "consumer_secret": "paste_my_consumer_secret_here"
@@ -25,7 +25,7 @@ After pasting the consumer key and consumer secret, save the file as oauth2.json
 
 [Yahoo_oauth](https://pypi.org/project/yahoo_oauth/) is a great python library package that supports OAuth authentication mechanism necessary to access many of Yahoo services. Once the yahoo_oauth package is downloaded via pip we can start the process of connecting to Yahoo's Fantasy Sports API.  
 
-{% codeblock %}
+{% codeblock lang:python line_number:false %}
 from yahoo_oauth import OAuth2
 oauth = OAuth2(None, None, from_file='oauth2.json')
 if not oauth.token_is_valid():
