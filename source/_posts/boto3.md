@@ -1,12 +1,12 @@
 ---
 title: Utilizing Boto3 to Retrieve List of EC2 Instances
-date: 
+date: 2019-08-20 08:53:18
 cover_index: /assets/chip.png
-cover_detail: /assets/city-2.jpg
+cover_detail: /assets/city-3.jpg
 tags:
 ---
 
-In this post I share a handy script that allows you to get list of all ec2 instances by instance id, instance type, launch date and finally format that data into a neat dataframe using pandas.
+In this post I share a handy script that allows you to get list of all ec2 instances by instance id, instance type, launch date and then finally format that data into a dataframe using pandas.
 
 {% codeblock lang:python line_number:false %}
 #Import packages

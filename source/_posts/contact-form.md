@@ -1,6 +1,6 @@
 ---
 title: Creating a Dynamic Contact Form for a Static Website Using AWS Lambda, API Gateway, and SES
-date: 2018-11-26 08:53:18
+date: 2019-08-21 08:53:18
 cover_index: /assets/typewriter.jpg
 cover_detail: /assets/city-2.jpg
 tags:

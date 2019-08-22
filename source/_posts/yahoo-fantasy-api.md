@@ -1,12 +1,12 @@
 ---
-title: Utilizing Yahoo's Fantasy Sports API to Import Data for Fantasy Football League
-date: 2018-11-03 22:30:47
-cover_index: /assets/vince.jpg
-cover_detail: /assets/city-3.jpg
+title: Utilizing Yahoo's Fantasy Sports API to Import Fantasy Football League Data
+date: 2019-08-19 08:53:18
+cover_index: /assets/diagram.jpg
+cover_detail: /assets/city-4.jpg
 tags:
 ---
 
-My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, it lacks a proper record-keeping system to keep track of all statistics. To go back and retrieve the data, one would have to manually copy and paste everything, a time-consuming task. In this post, I will illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request for league data, receive response object, parse the XML response object and finally write the data to a csv file. 
+My friends and I are part of a fantasy football league that was started in 2002. With over a decade and a half worth of history, our league is pretty intense. Unfortunately, it lacks a proper record-keeping system to keep track of all statistics. To go back and retrieve the data one would have to manually copy and paste everything, a time-consuming task. In this post, I illustrate how to connect to Yahoo's Fantasy Sports API with oauth 2 authorization, make a request for league data, receive response object, parse the XML response object and finally write the data to a csv file. 
 
 
 {% img /assets/oldnfl1.jpg %}
