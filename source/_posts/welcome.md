@@ -12,7 +12,7 @@ Thank you for visiting my blog. This site was created to document my odyssey tow
 ## About Me
 
 {% pullquote left %}"You have to assemble your life yourself - action by action. And be satisfied if each one achieves its goal, as far as it can...But there are external obstacles!...if you accept the obstacle and work with what you're given, an alternative will present itself." **Marcus Aurelius, Meditations 8.32{% endpullquote %}
-I'm from the sunshine state. I grew up in the projects of Hollywood, Florida. I received my Bachelors in Chemistry from Florida State University and earned my Masters in Biomedical Science from Barry University. Initially, my goal was to become a physician but circumstances didn't permit it so I ended up switching fields. In January 2018, I started learning programming and taught myself Python. I then moved on to learning and working with AWS. I am a strong believer in stoic principles. Despite setbacks my life purpose is still the same: to help society and improve the lives of others. 
+I'm from the sunshine state. I grew up in the projects of Hollywood, Florida. I received my Bachelors in Chemistry from Florida State University and earned my Masters in Biomedical Science from Barry University. Initially, my goal was to become a physician but circumstances didn't permit it so I ended up switching fields. In January 2018, I started learning programming and taught myself Python. I then moved on to learning and working with AWS services. I am a strong believer in stoic principles. Despite setbacks my life purpose is still the same - to help society and improve the lives of others. 
 
 ----------------
 
